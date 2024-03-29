@@ -41,35 +41,38 @@ header {
   background-color: black;
 }
 
-button {
-  position: relative;
-  height: 44px;
-  width: 44px;
-  background: none;
-  border: none;
-  .line {
-    position: absolute;
-    height: 2px;
-    width: 60%;
-    left: 20%;
-    background-color: white;
-    transition: all .3s ease;
-
-  }//end line
-  .top {top: 29%;}
-  .middle {top: 48%;}
-  .bottom {top: 67%;}
-}//end button
-
-#hamburgerBtn.open {
-  .top {
-    transform: rotate(45deg);
-  top: 48%;}
-  .middle, .bottom {
-    transform: rotate(-45deg);
-    top: 48%;
+.hello {
+  button {
+    position: relative;
+    height: 44px;
+    width: 44px;
+    background: none;
+    border: none;
+    .line {
+      position: absolute;
+      height: 2px;
+      width: 60%;
+      left: 20%;
+      background-color: white;
+      transition: all .3s ease;
+  
+    }//end line
+    .top {top: 29%;}
+    .middle {top: 48%;}
+    .bottom {top: 67%;}
+  }//end button
+  
+  #hamburgerBtn.open {
+    .top {
+      transform: rotate(45deg);
+    top: 48%;}
+    .middle, .bottom {
+      transform: rotate(-45deg);
+      top: 48%;
+    }
   }
 }
+
 
 nav {
   ul li a {
@@ -188,14 +191,17 @@ nav {
     padding: 10px;
     margin-top: 0;
   }
-  button {
-    border: none;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 10px;
-    color: white;
-    background-color: rgb(10, 103, 10);
-  }
+  
+    button {
+      border: none;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      color: white;
+      background-color: rgb(10, 103, 10);
+    }
+  
+ 
   
 }
 

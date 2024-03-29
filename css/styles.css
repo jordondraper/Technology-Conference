@@ -383,14 +383,14 @@ header x h1 {
   background-color: black;
 }
 
-button {
+.hello button {
   position: relative;
   height: 44px;
   width: 44px;
   background: none;
   border: none;
 }
-button .line {
+.hello button .line {
   position: absolute;
   height: 2px;
   width: 60%;
@@ -398,21 +398,20 @@ button .line {
   background-color: white;
   transition: all 0.3s ease;
 }
-button .top {
+.hello button .top {
   top: 29%;
 }
-button .middle {
+.hello button .middle {
   top: 48%;
 }
-button .bottom {
+.hello button .bottom {
   top: 67%;
 }
-
-#hamburgerBtn.open .top {
+.hello #hamburgerBtn.open .top {
   transform: rotate(45deg);
   top: 48%;
 }
-#hamburgerBtn.open .middle, #hamburgerBtn.open .bottom {
+.hello #hamburgerBtn.open .middle, .hello #hamburgerBtn.open .bottom {
   transform: rotate(-45deg);
   top: 48%;
 }
