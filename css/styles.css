@@ -363,7 +363,7 @@ body {
 }
 
 #headerWrapper {
-  color: rgba(165, 82, 31, 0.9294117647);
+  color: black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -380,18 +380,53 @@ header x h1 {
 }
 
 #navWrapper {
-  background-color: #a5521f;
+  background-color: black;
+}
+
+button {
+  position: relative;
+  height: 44px;
+  width: 44px;
+  background: none;
+  border: none;
+}
+button .line {
+  position: absolute;
+  height: 2px;
+  width: 60%;
+  left: 20%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+button .top {
+  top: 29%;
+}
+button .middle {
+  top: 48%;
+}
+button .bottom {
+  top: 67%;
+}
+
+#hamburgerBtn.open .top {
+  transform: rotate(45deg);
+  top: 48%;
+}
+#hamburgerBtn.open .middle, #hamburgerBtn.open .bottom {
+  transform: rotate(-45deg);
+  top: 48%;
 }
 
 nav ul li a {
   display: block;
   padding: 0.9rem 2vw;
-  border-top: solid 1px rgba(0, 0, 0, 0.2);
+  border-top: solid 1px rgba(219, 219, 219, 0.5);
 }
 nav ul li a:hover {
   background-color: rgba(79, 4, 133, 0.2);
 }
 nav ul {
+  display: none;
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -400,8 +435,11 @@ nav ul {
 nav ul li {
   flex: 1;
 }
+nav ul.open {
+  display: block;
+}
 nav li.active {
-  background-color: rgb(182, 26, 12);
+  background-color: rgb(10, 103, 10);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: white;
 }
@@ -409,56 +447,127 @@ nav a {
   display: block;
   padding: 0.75rem;
   color: white;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 nav a:hover {
   color: white;
 }
 
-#mainWrapper h1 {
+#mainWrapper .paragraph h1 {
   font-weight: 600;
-  color: #a5521f;
-  margin: 2rem;
-  padding: 16px;
-}
-
-#ze {
   color: black;
   margin: 2rem;
   padding: 16px;
 }
-
-picture img {
-  margin: 5rem;
-  width: 90%;
-  margin-left: 5%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+#mainWrapper .paragraph p {
+  color: black;
+  padding: 16px;
 }
 
-video {
-  width: 90%;
-  margin-left: 5%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.hero {
+  position: relative;
 }
-
-details {
+.hero div.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 40%);
+  padding: 10px;
+  text-shadow: 0 0 2px black;
+}
+.hero div.text p {
   color: white;
-  margin: 0.5rem 16px;
 }
-details summary {
-  background-color: rgb(182, 26, 12);
-  padding: 0.7rem;
+.hero div.text h3 {
+  color: white;
+}
+.hero div.text p {
+  color: white;
+}
+.hero video {
+  width: 100%;
+  height: auto;
+}
+
+.allcards {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
   border-radius: 5px;
-  margin: 2rem;
+  gap: 16px;
+  overflow: hidden;
 }
-details p {
+.allcards section {
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+}
+.flip-card h1 {
+  color: white;
+  background-color: rgb(10, 103, 10);
+  overflow: hidden;
+  padding: 10px;
+  margin-top: 0;
+}
+.flip-card button {
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(10, 103, 10);
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
   color: black;
-  padding: 1rem;
+}
+
+/* Style the back side */
+.flip-card-back {
+  color: black;
+  transform: rotateY(180deg);
 }
 
 #footerWrapper {
-  background-color: #a5521f;
+  background-color: black;
 }
 
 footer {
@@ -483,11 +592,28 @@ footer p {
     grid-template-columns: 1fr 1fr;
   }
 
+  nav button {
+    display: none;
+  }
   nav ul {
     display: flex;
+    justify-content: left;
   }
   nav ul li a {
     border: none;
+  }
+
+  .allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .allcards section {
+    flex-basis: calc(50% - 8px);
+  }
+  .allcards img {
+    width: 100%;
+    height: auto;
   }
 }
 @media only screen and (min-width: 60rem) {
@@ -503,5 +629,9 @@ footer p {
   nav ul li a {
     padding: 0.7rem 2rem;
     font-size: 0.8rem;
+  }
+
+  .allcards section {
+    flex-basis: calc(33.333% - 10.6666666667px);
   }
 }

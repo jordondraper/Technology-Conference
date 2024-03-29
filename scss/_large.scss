@@ -11,3 +11,9 @@ header, nav, main, footer {
     padding: .7rem 2rem;
     font-size: .8rem;
   } // end nav
+
+  .allcards {
+    section {
+        flex-basis: calc(33.333% - ((($gutter*2)/3)));
+    }
+}
